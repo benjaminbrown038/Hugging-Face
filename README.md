@@ -1,4 +1,4 @@
-# hugging_face
+# Hugging Face
 
 References: 
 
