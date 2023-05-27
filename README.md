@@ -40,7 +40,7 @@
 - https://huggingface.co/docs/transformers/tasks/document_question_answering
 
 
-#### Deploy With Sagemaker
+#### Sagemaker (Training & Deploying)
 
 - https://huggingface.co/docs/transformers/sagemaker
 
