@@ -1,5 +1,11 @@
 # Hugging Face
 
+
+
+##### Data Augmentation
+
+- https://huggingface.co/docs/transformers/internal/image_processing_utils
+
 #### Image Classification
 
 - https://huggingface.co/docs/transformers/tasks/image_classification
