@@ -64,13 +64,30 @@ val_data_augmentation = keras.Sequential([layers.CenterCrop(size[0],size[1]),
                                         )
   
   
-def convert_to_tf_tensor():
+def convert_to_tf_tensor(image,Image):
+    np_image = np.array(image)
+    tf_image = tf.convert_to_tensor(np_image):
+    return tf.expand_dims(tf_image,0)
+ 
 
 def preprocess_train():
+    images = [
+        train_data_augmentation(convert_to_tf_tensor(image.convert("RGB"))) for image in example_batch["image"])
+        ]
+    example_batch["pixel_values"] = [tf.transpose(tf.squeeze(image)) for image in images]
+    return example_batch
 
 def preprocess_val():
+    images = [val_data_augmentation(convert_to_tf_tensor(image.convert("RGB")))for images in example_batch["image"]
+             ]
+    example_batch["pixel_values"] = [tf.transpose(tf.squeeze(image))for image in images]
+    return example_batch
  
 def compute_metrics():
+    predictions , labels = eval_pred 
+    predictions = np.argmax(predicitons,axis = 1)
+    return accuracy.compute(predictions=predictions,references = labels)
+    
 
   
 model = AutoModelForImageClassification.from_pretrained()
